@@ -1,13 +1,13 @@
 export function getRecipes(name) {
     return function(dispatch) {
         if(name){
-            return fetch("http://localhost:3001/recipes?name="+name)
+            return fetch("https://food-app-ticiano.herokuapp.com/recipes?name="+name)
                 .then(response => response.json())
                 .then(json => {
                     dispatch({ type: "GET_RECIPES", payload: json });
                 });
         }else{
-            return fetch("http://localhost:3001/recipes")
+            return fetch("https://food-app-ticiano.herokuapp.com/recipes")
                 .then(response => response.json())
                 .then(json => {
                     dispatch({ type: "GET_RECIPES", payload: json });
@@ -19,7 +19,7 @@ export function getRecipes(name) {
 
 export function getRecipeDetail(id){
     return function(dispatch) {
-        return fetch("http://localhost:3001/recipes/" + id)
+        return fetch("https://food-app-ticiano.herokuapp.com/recipes/" + id)
         .then(response => response.json())
         .then(json => {
             dispatch({ type: "GET_RECIPE_DETAIL", payload: json });
@@ -29,7 +29,7 @@ export function getRecipeDetail(id){
 
 export function getDiets(){
     return function(dispatch) {
-        return fetch("http://localhost:3001/types")
+        return fetch("https://food-app-ticiano.herokuapp.com/types")
         .then(response => response.json())
         .then(json => {
             dispatch({ type: "GET_DIETS", payload: json });
@@ -39,7 +39,7 @@ export function getDiets(){
 
 export function postRecipe(data){
     return function(dispatch) {
-        return fetch("http://localhost:3001/recipe", {
+        return fetch("https://food-app-ticiano.herokuapp.com/recipe", {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers:{
