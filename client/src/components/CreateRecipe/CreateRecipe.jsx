@@ -188,7 +188,7 @@ ingredients.map((ingredient)=> renderIngredients.push({value:ingredient, label:i
             })
         await props.getRecipes()
         // window.location = "http://localhost:3000/recipes";
-        window.location = "https://food-app-ticiano.herokuapp.com/recipes"
+        window.location = "https://git.heroku.com/food-app-ticiano.git/recipes"
     }
 
     return (
