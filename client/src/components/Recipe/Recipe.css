@@ -3,6 +3,8 @@
     text-align: center;
     height:100%;
     width: 100%;
+    max-width: 650px;
+    max-height: 450px;
     overflow: hidden;
 }
 .bottom-left {
@@ -41,7 +43,7 @@
     border-radius: 50%;
     display: inline-block;
     line-height: 22px;
-    font-size: 12px;
+    font-size: 1rem;
     height: 25px;
     text-align: center;
     width: 25px;
@@ -58,7 +60,7 @@
     top: 3rem;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: fit-content;
     max-width: 90%;
 }
@@ -66,9 +68,7 @@
     overflow: hidden;
     opacity: 0.7;
     width: 100%;
-    max-width: 600px;
     height: 100%;
-    max-height: 389px;
     -webkit-transform: scale(1.12);
     transform: scale(1.12);
     -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
