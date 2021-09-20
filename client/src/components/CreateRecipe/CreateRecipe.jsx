@@ -1,4 +1,5 @@
 import React ,{ useState,useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
 import Select from 'react-select'
 import { connect } from "react-redux";
 import './CreateRecipe.css'
@@ -174,9 +175,9 @@ ingredients.map((ingredient)=> renderIngredients.push({value:ingredient, label:i
     const dishTypes = ["main course","side dish","dessert","appetizer","salad","bread","breakfast","soup","beverage","sauce","marinade","fingerfood","snack","drink"]
     const renderDishTypes = []
     dishTypes.map((dish) => renderDishTypes.push({value:dish, label:dish}));
+    const history = useHistory()
 
     const handleSubmit = async (e)=>{
-        console.log(state)
         e.preventDefault();
         await props.postRecipe(state)
             await Swal.fire({
@@ -187,8 +188,7 @@ ingredients.map((ingredient)=> renderIngredients.push({value:ingredient, label:i
             timer: 1500
             })
         await props.getRecipes()
-        // window.location = "http://localhost:3000/recipes";
-        window.location = "https://git.heroku.com/food-app-ticiano.git/recipes"
+        history.push('/recipes')
     }
 
     return (
